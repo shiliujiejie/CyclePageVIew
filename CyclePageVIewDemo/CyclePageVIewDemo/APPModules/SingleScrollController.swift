@@ -25,11 +25,14 @@ class SingleScrollController: UIViewController {
     }()
     
     private lazy var cycleView1: CyclePageView = {
+        
         let configM = CyclePageConfig()
         configM.animationType = .curlUp
         configM.isLocalImage = true
-        config.transitionDuration = 5
-        config.animationDuration = 2
+        configM.transitionDuration = 5
+        configM.activeTintColor = UIColor.red
+        configM.animationDuration = 2
+        
         let view = CyclePageView.init(frame: CGRect(x: 0, y: 210, width: screenWidth, height: 130), config: configM)
         return view
     }()
