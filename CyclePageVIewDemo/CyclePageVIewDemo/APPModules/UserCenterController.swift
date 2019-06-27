@@ -112,7 +112,7 @@ extension UserCenterController: UIScrollViewDelegate {
             frame.size.height = (screenHeight >= 812.0) ? imageHeight + topInset : imageHeight
             if offsetY >= -safeAreaTopHeight {
                 let alpha = (offsetY + safeAreaTopHeight) / CGFloat(safeAreaTopHeight)
-                navBar.backgroundColor = UIColor(r: 255, g: 42, b: 49, a: alpha > 0.55 ?  0.55 : alpha)
+                navBar.backgroundColor = UIColor(white: 0.7, alpha: alpha > 0.99 ? 0.99 : alpha)
                 navBar.titleLabel.text = "我的"
             }
         }
