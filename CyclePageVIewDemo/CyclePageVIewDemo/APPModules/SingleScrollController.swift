@@ -13,23 +13,24 @@ class SingleScrollController: UIViewController {
     private var config: CyclePageConfig = {
         let config = CyclePageConfig()
         config.isLocalImage = true
-        config.animationType = .curlUp
+        config.animationType = .crossDissolve
         config.transitionDuration = 4
         config.animationDuration = 1.5
+        config.cycleCornerRadius = 10.0
         return config
     }()
     private lazy var cycleView: CyclePageView = {
-        let view = CyclePageView.init(frame: CGRect(x: 0, y: 10, width: screenWidth, height: 170), config: config)
+        let view = CyclePageView.init(frame: CGRect(x: 15, y: 15, width: screenWidth - 30, height: 150), config: config)
         return view
     }()
     
     private lazy var cycleView1: CyclePageView = {
         let configM = CyclePageConfig()
-        configM.animationType = .crossDissolve
+        configM.animationType = .curlUp
         configM.isLocalImage = true
         config.transitionDuration = 5
         config.animationDuration = 2
-        let view = CyclePageView.init(frame: CGRect(x: 0, y: 220, width: screenWidth, height: 130), config: configM)
+        let view = CyclePageView.init(frame: CGRect(x: 0, y: 210, width: screenWidth, height: 130), config: configM)
         return view
     }()
     
@@ -37,7 +38,7 @@ class SingleScrollController: UIViewController {
         let configM = CyclePageConfig()
         configM.animationType = .flipFromBottom
         configM.isLocalImage = true
-        let view = CyclePageView.init(frame: CGRect(x: 0, y: 390, width: screenWidth, height: 150), config: configM)
+        let view = CyclePageView.init(frame: CGRect(x: 15, y: 390, width: screenWidth - 30, height: 150), config: configM)
         return view
     }()
     

@@ -37,4 +37,6 @@ class CyclePageConfig: NSObject {
     var placeHolderImage: UIImage? = UIImage(named: "PHC")
     /// 是否本地图片
     var isLocalImage: Bool = false
+    /// 圆角
+    var cycleCornerRadius: CGFloat = 0.0
 }

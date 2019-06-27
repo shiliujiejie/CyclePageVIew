@@ -137,6 +137,7 @@ private extension CyclePageView {
     }
     
     func addImageToSelf() {
+        self.layer.cornerRadius = configModel.cycleCornerRadius
         if configModel.isLocalImage {
              self.image = UIImage(named: self.images[self.currentIndex])
         } else {
