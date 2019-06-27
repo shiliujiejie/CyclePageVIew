@@ -1,6 +1,8 @@
 # CyclePageVIew
 
-  支持下拉缩放的 banner 封装  (swift 4.2 )，支持3种动画切换，封装及其简单， 就一个 UIImageVIew 
+     新概念 banner 组件 UIImageView + Timer + PageControl   搞定 banner 循环
+    
+     支持下拉缩放的 banner 封装  (swift 4.2 )，支持3种动画切换，封装简单
 
 
 ## | ScreenRecording  |
