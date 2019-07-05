@@ -11,7 +11,7 @@ import Kingfisher
 
 class CyclePageView: UIImageView {
     
-    private var timer: Timer!
+    private var timer: Timer?
     private var configModel: CyclePageConfig!
     private var images = [String]()
     private var pageControl: PillPageControl = {
@@ -57,6 +57,9 @@ class CyclePageView: UIImageView {
     }
     
     func setImages(_ imageLists: [String]) {
+        timer?.invalidate()
+        timer = nil
+        
         /// 没有数据，直接显示占位图
         if imageLists.count == 0 {
             image = configModel.placeHolderImage
@@ -103,7 +106,7 @@ private extension CyclePageView {
                 strongSelf.resetImageWithoutAnimation()
             }
         }
-        RunLoop.current.add(timer, forMode: .common)
+        RunLoop.current.add(timer!, forMode: .common)
     }
     
     func resetImage() {

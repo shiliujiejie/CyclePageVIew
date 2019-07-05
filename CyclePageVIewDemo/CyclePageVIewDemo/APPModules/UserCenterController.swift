@@ -103,7 +103,7 @@ extension UserCenterController: UIScrollViewDelegate {
         
         // imageHeight + topInset == 164 或者 140
         if offsetY <= -(imageHeight + topInset) {
-            frame.origin.y = 0 // 这句代码一定要加  不然会出点问题
+            frame.origin.y = 0 // 这句代码一定要加 ,不加有个小bug， 自己试
             frame.size.height =  -offsetY
             navBar.backgroundColor = UIColor.clear
             navBar.titleLabel.text = ""

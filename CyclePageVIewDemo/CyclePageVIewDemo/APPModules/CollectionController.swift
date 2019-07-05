@@ -13,7 +13,7 @@ fileprivate let topInset: CGFloat = (screenHeight >= 812.0 && UIDevice.current.m
 class CollectionController: BaseViewController {
     
     private let cellId = "collection"
-    private let imageHeight: CGFloat = 120
+    private let imageHeight: CGFloat = 90
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
