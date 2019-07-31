@@ -59,7 +59,7 @@ class CyclePageView: UIImageView {
     func setImages(_ imageLists: [String]) {
         timer?.invalidate()
         timer = nil
-        
+        currentIndex = 0
         /// 没有数据，直接显示占位图
         if imageLists.count == 0 {
             image = configModel.placeHolderImage
