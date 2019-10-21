@@ -19,8 +19,8 @@ class SingleScrollController: UIViewController {
         config.cycleCornerRadius = 10.0
         return config
     }()
-    private lazy var cycleView: CyclePageView = {
-        let view = CyclePageView.init(frame: CGRect(x: 15, y: 15, width: screenWidth - 30, height: 150), config: config)
+    private lazy var cycleView: CycleScrollView = {
+        let view = CycleScrollView.init(frame: CGRect(x: 15, y: 15, width: screenWidth - 30, height: 150), config: config)
         return view
     }()
     
@@ -52,7 +52,7 @@ class SingleScrollController: UIViewController {
         title = "消息"
         
         view.addSubview(cycleView)
-        cycleView.setImages(imageNames)
+        cycleView.setImages(imageUrls:imageNames, titles: nil)
         
         view.addSubview(cycleView1)
         cycleView1.setImages(imageNames.reversed())

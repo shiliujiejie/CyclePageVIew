@@ -68,14 +68,14 @@ class CyclePageView: UIImageView {
         self.images = imageLists
         /// 加载第一条
         addImageToSelf()
+        /// 添加手势
+        addGesture()
         /// 只有一条数据，不滚动
         if imageLists.count == 1 { return }
         /// 配置指示器
         configIndicator()
         /// 设置切换时间
         runTimer()
-        /// 添加手势
-        addGesture()
     }
     
 }

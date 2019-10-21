@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04360637235D5888004658AD /* CycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04360636235D5888004658AD /* CycleScrollView.swift */; };
 		045B6E5322C4C8A500DAA2CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B6E5222C4C8A500DAA2CB /* AppDelegate.swift */; };
 		045B6E5522C4C8A500DAA2CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B6E5422C4C8A500DAA2CB /* ViewController.swift */; };
 		045B6E5822C4C8A500DAA2CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045B6E5622C4C8A500DAA2CB /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04360636235D5888004658AD /* CycleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleScrollView.swift; sourceTree = "<group>"; };
 		045B6E4F22C4C8A500DAA2CB /* CyclePageVIewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyclePageVIewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045B6E5222C4C8A500DAA2CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		045B6E5422C4C8A500DAA2CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				045B6E8A22C4C9D500DAA2CB /* PageControl.swift */,
 				045B6E8B22C4C9D500DAA2CB /* CyclePageConfig.swift */,
 				045B6E8C22C4C9D500DAA2CB /* CyclePageView.swift */,
+				04360636235D5888004658AD /* CycleScrollView.swift */,
 			);
 			path = CyclePageView;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				045B6E9022C4C9D500DAA2CB /* CyclePageView.swift in Sources */,
 				045B6E5522C4C8A500DAA2CB /* ViewController.swift in Sources */,
+				04360637235D5888004658AD /* CycleScrollView.swift in Sources */,
 				045B6E5322C4C8A500DAA2CB /* AppDelegate.swift in Sources */,
 				045B6EA722C4D6B900DAA2CB /* RootTabBarConfig.swift in Sources */,
 				045B6EA622C4D6B900DAA2CB /* Color_extension.swift in Sources */,

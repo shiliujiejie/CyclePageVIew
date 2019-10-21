@@ -39,4 +39,6 @@ class CyclePageConfig: NSObject {
     var isLocalImage: Bool = false
     /// 圆角
     var cycleCornerRadius: CGFloat = 0.0
+    
+    var itemSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
 }
