@@ -17,6 +17,7 @@ class SingleScrollController: UIViewController {
         config.transitionDuration = 4
         config.animationDuration = 1.5
         config.cycleCornerRadius = 10.0
+        config.itemSize = CGSize(width: UIScreen.main.bounds.width - 30, height: 150)
         return config
     }()
     private lazy var cycleView: CycleScrollView = {
@@ -52,7 +53,7 @@ class SingleScrollController: UIViewController {
         title = "消息"
         
         view.addSubview(cycleView)
-        cycleView.setImages(imageUrls:imageNames, titles: nil)
+        cycleView.setImages(imageUrls:["image12"], titles: nil)
         
         view.addSubview(cycleView1)
         cycleView1.setImages(imageNames.reversed())

@@ -12,7 +12,6 @@ class CycleScrollView: UIView {
 
     private let customLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 30, height: 150)
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets.zero
         layout.minimumInteritemSpacing = 0
@@ -24,6 +23,7 @@ class CycleScrollView: UIView {
         collection.backgroundColor = UIColor.clear
         collection.showsHorizontalScrollIndicator = false
         collection.isPagingEnabled = true
+        collection.bounces = false
         collection.delegate = self
         collection.dataSource = self
         collection.register(CyclePageScrollCell.classForCoder(), forCellWithReuseIdentifier: CyclePageScrollCell.cellId)
@@ -77,11 +77,11 @@ class CycleScrollView: UIView {
             collectionView.reloadData()
         }
         
-        /// 配置指示器
-        configIndicator()
-        /// 设置切换时间
-        runTimer()
-        
+        if images.count > 1 {
+            /// 配置指示器
+            configIndicator()/// 设置切换时间
+            runTimer()
+        }
     }
     
     func configIndicator() {
@@ -111,7 +111,7 @@ class CycleScrollView: UIView {
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-extension CycleScrollView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CycleScrollView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
@@ -137,14 +137,35 @@ extension CycleScrollView: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return configModel.itemSize
+    }
+   
+    
 }
 extension CycleScrollView: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        //timer?.fireDate = Date.distantFuture  // 拖动开始，timer先暂停
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSetX = scrollView.contentOffset.x
-        let index = offSetX/(screenWidth - 30)
-        print("index === \(index)")
+        let index = offSetX/configModel.itemSize.width
         currentIndex = Int(index)
-        pageControl.progress = CGFloat(currentIndex)
+         pageControl.progress = CGFloat(currentIndex)
+//        if index > CGFloat(images.count - 1) { // 最后一张，滑动，到第一章
+//            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: false)
+//            currentIndex = 0
+//        } else if index < 0.0 {  // 第一张倒滑， 到最后一张
+//            timer?.fireDate = Date.distantFuture
+//            collectionView.scrollToItem(at: IndexPath(item: images.count - 1, section: 0), at: .centeredHorizontally, animated: false)
+//             currentIndex = images.count - 1
+//        } else {
+//            currentIndex = Int(index)
+//        }
+//        pageControl.progress = CGFloat(currentIndex)
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        //timer?.fireDate = Date.distantPast  // 拖动结束，timer恢复计时
     }
 }
 
